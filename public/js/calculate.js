@@ -1,35 +1,34 @@
-var grades = [65.95, 56.98, 78.62, 96.1, 90.3, 72.24, 92.34, 60.00, 81.43, 86.22, 88.33, 9.03,
-     49.93, 52.34, 53.11, 50.10, 88.88, 55.32, 55.69, 61.68, 70.44, 70.54, 90.0, 71.11, 80.01];
+var grades = [65.95, 56.98, 78.62, 96.1, 90.3, 72.24, 92.34, 60.00, 81.43, 86.22, 88.33, 9.03, 49.93, 52.34, 53.11, 50.10, 88.88, 55.32, 55.69, 61.68, 70.44, 70.54, 90.0, 71.11, 80.01];
 
-var bounds = [0,0,0,0,0,0,0,0,0,0,0];
-var output = [0,0,0,0,0,0,0,0,0,0,0];
+var bounds = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+var output = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 var histogramLength = bounds.length;
 
-var histogramBarColors = ["rgb(221,126,107)",	// dark red
-						  "rgb(234,153,153)",	// red
-						  "rgb(249,203,156)",	// orange
-					   	  "rgb(255,229,153)",	// yellow
-						  "rgb(182,215,168)"]	// green
-var histogramNameColors = ["rgb(166,28,0)",			// dark red
-						  "rgb(204,0,0)",			// red
-						  "rgb(230,145,56)",		// orange
-					   	  "rgb(241,194,50)",		// yellow
-						  "rgb(106,168,79)"]		// green
+var histogramBarColors = ["rgb(221,126,107)",   // dark red
+						  "rgb(234,153,153)",   // red
+						  "rgb(249,203,156)",   // orange
+					   	  "rgb(255,229,153)",   // yellow
+						  "rgb(182,215,168)"];  // green
+var histogramNameColors = ["rgb(166,28,0)",         // dark red
+						  "rgb(204,0,0)",           // red
+						  "rgb(230,145,56)",        // orange
+					   	  "rgb(241,194,50)",        // yellow
+						  "rgb(106,168,79)"];       // green
 var histogramNumColors = histogramBarColors.length;
 
 
 // copied bubble sort from https://khan4019.github.io/front-end-Interview-Questions/sort.html
-function bubbleSort(arr){ 
-   var len = arr.length;
-   for (var i = len-1; i>=0; i--){
-     for(var j = 1; j<=i; j++){
-       if(arr[j-1]>arr[j]){
-           var temp = arr[j-1];
-           arr[j-1] = arr[j];
-           arr[j] = temp;
+function bubbleSort(arr) { 
+	var len = arr.length;
+	for (var i = len-1; i>=0; i--){
+    	for(var j = 1; j<=i; j++){
+    		if(arr[j-1]>arr[j]){
+        		var temp = arr[j-1];
+        		arr[j-1] = arr[j];
+        		arr[j] = temp;
+            }
         }
-     }
-   }
+    }
    return arr;
 }
 

@@ -5,216 +5,217 @@
 	<meta charset="utf-8" />
 	<title>Histogram Generator Website</title>
 	<link rel="stylesheet" href="stylesheets/histogram.css" />
-	<script type="text/javascript" src="js/calculate.js"></script>
+	<script src="js/calculate.js"></script>
 </head>
 <body> 
 	<h1>Histogram Generator</h1>
 
 	<table id="outer-table">
-		<td>
+		<tr>
+			<td>
 
-			<table class="inner-table" id="inner-table-1">
-				<tr>
-					<th colspan="2">Lower bounds</th>
-				</tr>
-				<tr>
-					<td>
-						<p>Max</p>
-					</td>
-					<td class="input-cell"> 
-						<!-- learned about onchange from https://www.w3schools.com/tags/ev_onchange.asp --> 
-						<input type="text" onchange="checkBoundValidity(this.value, 0)" class="histogram-bound" value="100.00"/> <!--pattern=[0-9]{,3}+\.[0-9]{,2} -->
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>A+</p>
-					</td>
-					<td class="input-cell">
-						<input type="text" onchange="checkBoundValidity(this.value, 1)" class="histogram-bound" value="95.00"/>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>A</p>
-					</td>
-					<td class="input-cell">
-						<input type="text" onchange="checkBoundValidity(this.value, 2)" class="histogram-bound" value="90.00"/>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>A-</p>
-					</td>
-					<td class="input-cell">
-						<input type="text" onchange="checkBoundValidity(this.value, 3)" class="histogram-bound" value="85.00"/>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>B+</p>
-					</td>
-					<td class="input-cell">
-						<input type="text" onchange="checkBoundValidity(this.value, 4)" class="histogram-bound" value="80.00"/>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>B</p>
-					</td>
-					<td class="input-cell">
-						<input type="text" onchange="checkBoundValidity(this.value, 5)" class="histogram-bound" value="75.00"/>
-					</td>
-				</tr>	
-				<tr>
-					<td>
-						<p>B-</p>
-					</td>
-					<td class="input-cell">
-						<input type="text" onchange="checkBoundValidity(this.value, 6)" class="histogram-bound" value="70.00"/>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>C+</p>
-					</td>
-					<td class="input-cell">
-						<input type="text" onchange="checkBoundValidity(this.value, 7)" class="histogram-bound" value="65.00"/>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>C</p>
-					</td>
-					<td class="input-cell">
-						<input type="text" onchange="checkBoundValidity(this.value, 8)" class="histogram-bound" value="60.00"/>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>C-</p>
-					</td>
-					<td class="input-cell">
-						<input type="text" onchange="checkBoundValidity(this.value, 9)" class="histogram-bound" value="55.00"/>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>D</p>
-					</td>
-					<td class="input-cell">
-						<input type="text" onchange="checkBoundValidity(this.value, 10)" class="histogram-bound" value="50.00"/>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>F</p>
-					</td>
-					<td class="input-cell">
-						<input type="text" onchange="checkBoundValidity(this.value, 11)" class="histogram-bound" value="0.00"/>
-					</td>
-				</tr>
-			</table>
-		</td>
-		<td id="inner-table-separator">
-		</td>
-		<td>
-			<table class="inner-table" id="inner-table-2">
-				<tr>
-					<th colspan="2">Histogram</th>
-				</tr>
-				<tr>
-					<td>
-						<p>A+</p>
-					</td>
-					<td class="histogram-cell">
-						<p class="histogram-output"></p>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>A</p>
-					</td>
-					<td class="histogram-cell">
-						<p class="histogram-output"></p>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>A-</p>
-					</td>
-					<td class="histogram-cell">
-						<p class="histogram-output"></p>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>B+</p>
-					</td>
-					<td class="histogram-cell">
-						<p class="histogram-output"></p>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>B</p>
-					</td>
-					<td class="histogram-cell">
-						<p class="histogram-output"></p>
-					</td>
-				</tr>
-				<tr>
-				<tr>
-					<td>
-						<p>B-</p>
-					</td>
-					<td class="histogram-cell">
-						<p class="histogram-output"></p>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>C+</p>
-					</td>
-					<td class="histogram-cell">
-						<p class="histogram-output"></p>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>C</p>
-					</td>
-					<td class="histogram-cell">
-						<p class="histogram-output"></p>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>C-</p>
-					</td>
-					<td class="histogram-cell">
-						<p class="histogram-output"></p>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>D</p>
-					</td>
-					<td class="histogram-cell">
-						<p class="histogram-output"></p>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>F</p>
-					</td>
-					<td class="histogram-cell">
-						<p class="histogram-output"></p>
-					</td>
-				</tr>
-			</table>
+				<table class="inner-table" id="inner-table-1">
+					<tr>
+						<th colspan="2">Lower bounds</th>
+					</tr>
+					<tr>
+						<td>
+							<p>Max</p>
+						</td>
+						<td class="input-cell"> 
+							<!-- learned about onchange from https://www.w3schools.com/tags/ev_onchange.asp --> 
+							<input type="text" onchange="checkBoundValidity(this.value, 0)" class="histogram-bound" value="100.00"/> <!--pattern=[0-9]{,3}+\.[0-9]{,2} -->
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>A+</p>
+						</td>
+						<td class="input-cell">
+							<input type="text" onchange="checkBoundValidity(this.value, 1)" class="histogram-bound" value="95.00"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>A</p>
+						</td>
+						<td class="input-cell">
+							<input type="text" onchange="checkBoundValidity(this.value, 2)" class="histogram-bound" value="90.00"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>A-</p>
+						</td>
+						<td class="input-cell">
+							<input type="text" onchange="checkBoundValidity(this.value, 3)" class="histogram-bound" value="85.00"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>B+</p>
+						</td>
+						<td class="input-cell">
+							<input type="text" onchange="checkBoundValidity(this.value, 4)" class="histogram-bound" value="80.00"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>B</p>
+						</td>
+						<td class="input-cell">
+							<input type="text" onchange="checkBoundValidity(this.value, 5)" class="histogram-bound" value="75.00"/>
+						</td>
+					</tr>	
+					<tr>
+						<td>
+							<p>B-</p>
+						</td>
+						<td class="input-cell">
+							<input type="text" onchange="checkBoundValidity(this.value, 6)" class="histogram-bound" value="70.00"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>C+</p>
+						</td>
+						<td class="input-cell">
+							<input type="text" onchange="checkBoundValidity(this.value, 7)" class="histogram-bound" value="65.00"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>C</p>
+						</td>
+						<td class="input-cell">
+							<input type="text" onchange="checkBoundValidity(this.value, 8)" class="histogram-bound" value="60.00"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>C-</p>
+						</td>
+						<td class="input-cell">
+							<input type="text" onchange="checkBoundValidity(this.value, 9)" class="histogram-bound" value="55.00"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>D</p>
+						</td>
+						<td class="input-cell">
+							<input type="text" onchange="checkBoundValidity(this.value, 10)" class="histogram-bound" value="50.00"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>F</p>
+						</td>
+						<td class="input-cell">
+							<input type="text" onchange="checkBoundValidity(this.value, 11)" class="histogram-bound" value="0.00"/>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td id="inner-table-separator">
+			</td>
+			<td>
+				<table class="inner-table" id="inner-table-2">
+					<tr>
+						<th colspan="2">Histogram</th>
+					</tr>
+					<tr>
+						<td>
+							<p>A+</p>
+						</td>
+						<td class="histogram-cell">
+							<p class="histogram-output"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>A</p>
+						</td>
+						<td class="histogram-cell">
+							<p class="histogram-output"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>A-</p>
+						</td>
+						<td class="histogram-cell">
+							<p class="histogram-output"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>B+</p>
+						</td>
+						<td class="histogram-cell">
+							<p class="histogram-output"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>B</p>
+						</td>
+						<td class="histogram-cell">
+							<p class="histogram-output"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>B-</p>
+						</td>
+						<td class="histogram-cell">
+							<p class="histogram-output"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>C+</p>
+						</td>
+						<td class="histogram-cell">
+							<p class="histogram-output"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>C</p>
+						</td>
+						<td class="histogram-cell">
+							<p class="histogram-output"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>C-</p>
+						</td>
+						<td class="histogram-cell">
+							<p class="histogram-output"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>D</p>
+						</td>
+						<td class="histogram-cell">
+							<p class="histogram-output"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>F</p>
+						</td>
+						<td class="histogram-cell">
+							<p class="histogram-output"></p>
+						</td>
+					</tr>
+				</table>
 
-	</td>
+		</td>
+	</tr>
 </table>
 
 
