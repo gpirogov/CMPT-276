@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Histogram Generator Website</title>
+	<link rel="stylesheet" href="histogram.css" />
+	<script src="calculate.js"></script>
+</head>
+<body> 
+	<h1>Histogram Generator</h1>
+
+	<table id="outer-table">
+		<td>
+
+			<table class="inner-table" id="inner-table-1">
+				<tr>
+					<th colspan="2">Lower bounds</th>
+				</tr>
+				<tr>
+					<td>
+						<p>Max</p>
+					</td>
+					<td class="input-cell">
+						<input type="text" name="boundsMax" value="100.00"/> <!--pattern=[0-9]{,3}+\.[0-9]{,2} -->
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>A+</p>
+					</td>
+					<td class="input-cell">
+						<input type="text" name="boundsAPlus" value="95.00"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>A</p>
+					</td>
+					<td class="input-cell">
+						<input type="text" name="boundsA" value="90.00"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>A-</p>
+					</td>
+					<td class="input-cell">
+						<input type="text" name="boundsAMinus" value="85.00"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>B+</p>
+					</td>
+					<td class="input-cell">
+						<input type="text" name="boundsBPlus" value="80.00"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>B</p>
+					</td>
+					<td class="input-cell">
+						<input type="text" name="boundsB" value="75.00"/>
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						<p>B-</p>
+					</td>
+					<td class="input-cell">
+						<input type="text" name="boundsBMinus" value="70.00"/>
+
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>C+</p>
+					</td>
+					<td class="input-cell">
+						<input type="text" name="boundsCPlus" value="65.00"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>C</p>
+					</td>
+					<td class="input-cell">
+						<input type="text" name="boundsC" value="60.00"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>C-</p>
+					</td>
+					<td class="input-cell">
+						<input type="text" name="boundsCMinus" value="55.00"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>D</p>
+					</td>
+					<td class="input-cell">
+						<input type="text" name="boundsD" value="50.00"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>F</p>
+					</td>
+					<td class="input-cell">
+						<input type="text" name="boundsF" value="0.00"/>
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td id="inner-table-separator">
+		</td>
+		<td>
+			<table class="inner-table" id="inner-table-2">
+				<tr>
+					<th colspan="2">Histogram</th>
+				</tr>
+				<tr>
+					<td>
+						<p>A+</p>
+					</td>
+					<td class="histogram-cell">
+						<p>0</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>A</p>
+					</td>
+					<td class="histogram-cell">
+						<p>000</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>A-</p>
+					</td>
+					<td class="histogram-cell">
+						<p>000</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>B+</p>
+					</td>
+					<td class="histogram-cell">
+						<p>00</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>B</p>
+					</td>
+					<td class="histogram-cell">
+						<p>0</p>
+					</td>
+				</tr>
+				<tr>
+				<tr>
+					<td>
+						<p>B-</p>
+					</td>
+					<td class="histogram-cell">
+						<p>0000</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>C+</p>
+					</td>
+					<td class="histogram-cell">
+						<p>0</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>C</p>
+					</td>
+					<td class="histogram-cell">
+						<p>00</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>C-</p>
+					</td>
+					<td class="histogram-cell">
+						<p>00</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>D</p>
+					</td>
+					<td class="histogram-cell">
+						<p>000</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>F</p>
+					</td>
+					<td class="histogram-cell">
+						<p>00</p>
+					</td>
+				</tr>
+			</table>
+
+	</td>
+</table>
+
+
+</body>
+</html>

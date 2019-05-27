@@ -1,0 +1,97 @@
+body {
+	margin-left: 1em;
+}
+
+h1 {
+	font-family: Arial, Calibri, sans-serif;
+	font-weight: normal;
+	font-size: 1.75em;
+}
+
+p {
+	font-family: Georgia, "Times New Roman", Times;
+	font-size: 0.875em;
+}
+
+th {
+	font-family: Georgia, "Times New Roman", Times;
+	text-align: left;
+	font-size: 1.025em;
+	font-weight: bold;
+	color: rgb(201,11,14);
+	padding-bottom: 1.25em;
+}
+
+#outer-table {
+	margin-left: 0.75em;
+	margin-top: 2em;
+}
+
+
+#outer-table td{
+    vertical-align: top; /* found solution after trying this: https://stackoverflow.com/a/3673509 */
+}
+
+.inner-table {
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	padding-top: 0.5em;
+	padding-bottom: 1.625em;
+	vertical-align: top;
+	border: 1.5px solid rgb(221,234,239);
+	background-color: rgb(234,241,243);
+	border-radius: 3px;
+}
+
+#inner-table-separator{
+	padding-left: 0.4em;
+}
+
+#inner-table-1 tr td p{
+	margin-top: 0.875em;
+	margin-bottom: 0.875em;
+	padding-left: 1.875em;
+	padding-right: 2.375em;
+}
+
+.input-cell {
+	vertical-align: bottom !important;
+	padding-left: 2.325em;
+	padding-right: 6.75em;
+}
+
+input {
+	font-family: Georgia, "Times New Roman", Times;
+	font-size: 0.875em;
+	text-align: right;
+	width: 5em;
+	height: 2em;
+	padding-right: 0.75em;
+}
+
+#inner-table-2{
+	margin-top: 0.0625em; 	 /* just showing some attention to detail, lol:				*/
+	padding-bottom: 1.875em; /*	if you zoom into the screenshot provided in asn1.pdf, 	*/
+							 /* the Histogram box/table is actually a pixel or two 		*/
+							 /* lower than the Lower bounds box/table. 					*/ 
+	
+}
+
+#inner-table-2 tr td p{
+	margin-top: 0.3875em;
+	margin-bottom: 0em;
+	padding-left: 1.875em;
+	padding-right: 3.25em;
+}
+
+.histogram-cell {
+	padding-right: 1.5em;
+
+}
+.histogram-cell p{	
+	font-size: 1.0875em !important;
+	margin-top: 0.1625em !important;
+}
+
+
+
