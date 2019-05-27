@@ -29,7 +29,8 @@ th {
 
 
 #outer-table td{
-    vertical-align: top; /* found solution after trying this: https://stackoverflow.com/a/3673509 */
+	/* found solution after trying this: https://stackoverflow.com/a/3673509 */
+    vertical-align: top; 
 }
 
 .inner-table {
@@ -69,12 +70,22 @@ input {
 	padding-right: 0.75em;
 }
 
+.histogram-output {
+		padding-right: 0em !important;
+		padding-left: 0em !important;
+		font-weight: bold;
+
+		color: rgb(234,241,243); /* makes a better transition if set to this */
+
+		-webkit-transition: width 1.5s, background-color 1.5s, color 1.5s;
+		transition: width 1.5s, background-color 1.5s, color 1.5s;
+}
+
 #inner-table-2{
 	margin-top: 0.0625em; 	 /* just showing some attention to detail, lol:				*/
 	padding-bottom: 1.875em; /*	if you zoom into the screenshot provided in asn1.pdf, 	*/
 							 /* the Histogram box/table is actually a pixel or two 		*/
 							 /* lower than the Lower bounds box/table. 					*/ 
-	
 }
 
 #inner-table-2 tr td p{
@@ -88,10 +99,13 @@ input {
 	padding-right: 1.5em;
 
 }
-.histogram-cell p{	
+
+.histogram-output {	
 	font-size: 1.0875em !important;
 	margin-top: 0.1625em !important;
 }
 
-
-
+.histogram-output:hover {	
+	opacity: 0.75;
+	color: black !important; /* added this in case it's difficult to see numbers */
+}
