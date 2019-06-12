@@ -83,7 +83,7 @@ h2{
 	margin-right: 1.5em;
 	opacity: 0.75;
 	background-color: rgba(0,255,0,0.333);
-	border: 0.1em solid rgba(0,0,0,0.25);
+	border: 0.175em solid rgba(0,0,0,0.25);
 	color: lightgrey;
 	font-size: 5em;
 	font-weight: bold;
@@ -94,7 +94,7 @@ h2{
 	background-color: rgba(255,0,0,0.333);
 }
 
-.student-table-outer{
+#student-table-outer{
 	margin: 0 auto;
 	margin-top: 24.125em;
 }
@@ -115,76 +115,76 @@ td{
 	padding: 0;
 }
 
-.hair-left, .hair-top, .hair-right, .hair-bottom{
+#hair-left, #hair-top, #hair-right, #hair-bottom{
 	background-color: yellow;
 }
 
-.torso-left-top, .torso-mid-top, .torso-right-top, .shoulders-left, .shoulders-right, .collar{
+#torso-left-top, #torso-mid-top, #torso-right-top, #shoulders-left, #shoulders-right, #collar{
 	background-color: rgb(230,145,56);
 }
 
-.torso-left-bottom, .torso-mid-bottom, .torso-right-bottom{
+#torso-left-bottom, #torso-mid-bottom, #torso-right-bottom{
 	background-color: rgb(237,149,57);
 }
 
-.legs-left, .legs-mid, .legs-right{
+#legs-left, #legs-mid, #legs-right{
 	background-color: #b45f06;
 }
 
-.feet-left, .feet-right{
+#feet-left, #feet-right{
 	background-color: rgb(67,67,67);
 }
 
-.head, .neck, .arms-left, .arms-right{
+#head, #neck, #arms-left, #arms-right{
 	background-color: rgb(255,224,189);
 }
 
-.head{
+#head{
 	height: 1.75em;
 	width: 1.75em;
 }
 
-.neck, .collar, .hair-bottom, .hair-space, .legs-mid, .feet-right, .feet-left{
+#neck, #collar, #hair-bottom, #hair-space, #legs-mid, #feet-right, #feet-left{
 	height: 0.875em;
 	width: 0.875em;
 }
 
-.hair-left, .hair-right, .torso-left-top, .torso-left-bottom, .torso-mid-top, .torso-mid-bottom, .torso-right-top, .torso-right-bottom{
+#hair-left, #hair-right, #torso-left-top, #torso-left-bottom, #torso-mid-top, #torso-mid-bottom, #torso-right-top, #torso-right-bottom{
 	height: 2.625em;
 	width: 0.875em;
 }
 
-.hair-top{
+#hair-top{
 	height: 0.875em;
 	width: 1.75em;	
 }
 
-.shoulders-left, .shoulders-right{
+#shoulders-left, #shoulders-right{
 	height: 1.75em;
 	width: 0.875em;	
 }
 
-.arms-left-space, .arms-right-space{
+#arms-left-space, #arms-right-space{
 	height: 7.875em;
 	width: 0.875em;
 }
 
-.legs-space, .legs-left, .legs-right{
+#legs-space, #legs-left, #legs-right{
 	height: 9.625em;
 	width: 0.875em;
 }
 
-.arms-right, .arms-left{
+#arms-right, #arms-left{
 	height: 6.125em;
 	width: 0.875em;
 }
 
-.head-space{
+#head-space{
 	width: 0.875em;
 	height: 3.5em;
 }
 
-.student-table-head{
+#student-table-head{
 	margin: 0 auto; /* to center */
 }
 
