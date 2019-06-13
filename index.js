@@ -10,9 +10,12 @@ const pool = new Pool({
 });
 
 app.post('/loginnn', function(req, res){
-  var insertString = "INSERT INTO students VALUES(" + "12" + req.gender + ")";
+  /*var insertString = "INSERT INTO students VALUES(" + "12" + req.gender + ")";
 
-  pool.query(insertString);
+  pool.query(insertString);*/
+  console.log("test4");
+
+  pool.query('INSERT INTO students VALUES(123123)');
 });
 
 
