@@ -9,9 +9,7 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL
 });
 
-app.post('/loginnn', async function(req, res){
-  /*const client = await pool.connect();
-  client.query('INSERT INTO students VALUES(69)');*/
+app.post('/loginnn', function(req, res){
   pool.query('INSERT INTO students VALUES(123123)');
 });
 
