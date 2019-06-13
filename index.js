@@ -29,6 +29,8 @@ app.post('/new-student', function(req, res){
   res.redirect('/students.html');
   alert(insertString);
   alert("test4");
+  console.log(insertString);
+  console.log("test4");
 });
 
 
