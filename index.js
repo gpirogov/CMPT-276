@@ -18,14 +18,18 @@ app.post('/loginnn', function(req, res){
 
 
 
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => res.render('pages/index'));
-app.get('/db', function(req, res){
-  const result = pool.query('SELECT * FROM students');
-  const results = { 'results': (result) ? result.rows : null};
-  res.render('pages/db', results );
+app.get('/db', async (req, res) => {
+  try {
+    pool.query('SELECT * FROM students');
+    const results = { 'results': (result) ? result.rows : null};
+    res.render('pages/db', results );
+  } catch (err) {
+    console.error(err);
+    res.send("Error " + err);
+  }
 });
 
 
