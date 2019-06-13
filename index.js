@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());  
 
-app.get('new-student', function(req, res){
+app.get('/new-student', function(req, res){
   res.render('form');
   res.sendFile("index.html"); //if html file is within public directory
 });
