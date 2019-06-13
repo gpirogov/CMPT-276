@@ -10,8 +10,9 @@ const pool = new Pool({
 });
 
 app.post('/loginnn', async function(req, res){
-  const client = await pool.connect();
-  client.query('INSERT INTO students VALUES(69)');
+  /*const client = await pool.connect();
+  client.query('INSERT INTO students VALUES(69)');*/
+  pool.query('INSERT INTO students VALUES(123123)');
 });
 
 
