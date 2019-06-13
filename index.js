@@ -9,10 +9,12 @@ const pool = new Pool({
   ssl: true
 });
 
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
-app.get('/', (req, res) => res.render('pages/index'))
-app.get('/users', function(req, res){
+
+
+express().set('views', path.join(__dirname, 'views'))
+express().set('view engine', 'ejs')
+express().get('/', (req, res) => res.render('pages/index'))
+express().get('/users', function(req, res){
   pool.query("INSERT INTO students(id, lName, fName, gender, ethnicity, hColour, fColour, weight, wType, fHeight, iHeight, gpa) VALUES(0, 'Clarke', 'Melissa', 'Female', 'Caucasian', 'Blonde', 'Brown', 165.0, 'lbs', 5, 10, 3.4)", (error, result) =>{
     console.log(error, result);
     pool.end();
@@ -23,7 +25,7 @@ app.get('/users', function(req, res){
     pool.end();
   });
 
-  consol.log("test");
+  console.log("test");
 });
 
 express()
