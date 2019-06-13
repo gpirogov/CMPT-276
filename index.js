@@ -9,8 +9,10 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL
 });
 
-app.post('/loginnn', function(req, res){
-  pool.query('INSERT INTO students VALUES(123123)');
+app.post('/new-student', function(req, res){
+  var insertString = "INSERT INTO students VALUES(" + "12" + req.gender + ")";
+
+  pool.query(insertString);
 });
 
 

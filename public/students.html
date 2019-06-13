@@ -27,7 +27,65 @@
 			<h2>Height: </h2> <span id = "fHeight">5</span><span>'</span><span id = "iHeight">10</span><span>"</span></span><br>
 			<h2>GPA: </h2> <span id = "gpa">3.4</span><br>
 		</div>
-		<button id = "new-student-button" onclick="testFunction()">&squf;</button>
+		<div id = "new-student-div">
+			<form action="/new-student" method="post">
+				<h1>Student Information:</h1>
+				<h2>Name: </h2><input id="form-fName" type="text" name="fName" placeholder="First"> <input id="form-lName" type="text" name="lName" placeholder="Last"><br>
+				<h2>Gender: </h2> <select id="form-gender" name="gender">
+					<option value="default">&ndash;</option>
+					<option value="male">Male</option>
+    				<option value="female">Female</option>
+					<option value="maleOther">Other (male avatar preferred)</option>
+    				<option value="femaleOther">Other (female avatar preferred)</option>
+				</select><br>
+				<h2>Skin Tone: </h2><select id="form-skinTone" name="skinTone">
+					<option value="default">&ndash;</option>
+					<option value="pale">Pale</option>
+    				<option value="fair">Fair</option>
+    				<option value="tan">Tan</option>
+    				<option value="olive">Olive</option>
+    				<option value="auburn">Auburn</option>
+    				<option value="hazel">Hazel</option>
+    				<option value="dark">Dark</option>
+				</select><br>
+				<h2>Hair Colour: </h2><select id="form-hColour" name="hColour">
+					<option value="default">&ndash;</option>
+					<option value="blonde">Blonde</option>
+    				<option value="black">Black</option>
+    				<option value="brown">Brown</option>
+    				<option value="orange">Orange</option>
+    				<option value="grey">Grey</option>
+   					<option value="white">White</option>
+   					<option value="BlueDyed">Blue (dyed)</option>
+   					<option value="purpleDyed">Purple (dyed)</option>
+   					<option value="greenDyed">Green (dyed)</option>
+   					<option value="redDyed">Red (dyed)</option>
+				</select><br>
+				<h2>Favourite Colour: </h2><select id="form-fColour" name="fColour">
+					<option value="default">&ndash;</option>
+					<option value="red">Red</option>
+    				<option value="orange">Orange</option>
+    				<option value="yellow">Yellow</option>
+   					<option value="green">Green</option>
+   					<option value="blue">Blue</option>
+   					<option value="indigo">Indigo</option>
+   					<option value="violet">Violet</option>
+				</select><br>
+				<h2>Weight: </h2><input id="form-weight" type="text" name="weight"> <select id="form-wType" name="wType">
+					<option value="default">&ndash;</option>
+					<option value="lbs">lbs</option>
+    				<option value="kg">kg</option>
+    			</select><br>
+  				<h2>Height: </h2><input id="form-height" type="text" name="height"> <select id="form-hType" name="hType">
+					<option value="default">&ndash;</option>
+  					<option value="cm">cm</option>
+					<option value="in">inches (eg. 72in = 6'0")</option>
+    			</select><br>
+				<h2>GPA: </h2><input id="form-gpa" type="text" name="gpa">
+				<button id = "new-student-submit-button">SUBMIT</button>
+			</form>
+		</div>
+		<button id = "new-student-button">&squf;</button>
 		<button id = "delete-student-button">&times;</button>
 		<table id = "student-table-outer">
 			<tr>

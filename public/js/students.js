@@ -4,10 +4,12 @@
 
 $(document).ready(function(){
 
-
+	$('#new-student-div').hide();
 
 	$('#new-student-button').click(function(){
-	  console.log("test2");
+	  $('#info-div').hide();
+	  $('#new-student-div').show();
+	  $('#new-student-div').focus();
 
 	  
 	});

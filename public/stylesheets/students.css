@@ -59,7 +59,7 @@ h2{
 	background-color: rgba(255,0,0,0);
 }
 
-#info-div{
+#info-div, #new-student-div{
 	position: fixed;
 	width: 21em;
 	height: 51%;
@@ -70,7 +70,7 @@ h2{
 	border: 0.875em solid rgba(0,0,0,0.25);
 }
 
-#info-div span{
+#info-div span, #new-student-div span{
 	font-size: 1.5em;
 }
 
@@ -220,4 +220,25 @@ https://stackoverflow.com/questions/9383163/how-do-i-position-a-div-at-the-botto
 	transform: translate(-50%, -50%);
 	background-color: lightgrey;
 	border: 0.875em solid black;
+}
+
+
+
+
+#form-fName, #form-lName {
+	width: 7.25em;
+}
+#form-gender {
+	width: 14.5em;
+}
+#form-weight, #form-height, #form-gpa{
+	width: 3.5em;
+}
+
+#form-hType{
+	width: 4.75em;
+}
+
+#new-student-submit-button{
+	margin-left: 8.375em;
 }
