@@ -18,19 +18,14 @@ app.post('/loginnn', function(req, res){
 
 
 
-
-
-//app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => res.render('pages/index'));
 app.get('/db', async (req, res) => {
   try {
-    const client = await pool.connect();
-    const result = await client.query('SELECT * FROM students');
+    const result = await pool.query('SELECT * FROM students');
     const results = { 'results': (result) ? result.rows : null};
     res.render('pages/db', results );
-    client.release();
   } catch (err) {
     console.error(err);
     res.send("Error " + err);
