@@ -12,6 +12,17 @@ const pool = new Pool({
 app.use(express.static(path.join(__dirname, 'public')));  //required for /public files
 
 
+var bodyParser = require('body-parser');    // try removing this
+app.use(bodyParser.urlencoded({
+   extended: false
+}));
+app.use(bodyParser.json());  
+
+app.get('new-student', function(req, res){
+  res.render('form');
+  res.sendFile("index.html"); //if html file is within public directory
+});
+
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.post('/new-student', function(req, res){
@@ -21,16 +32,19 @@ app.post('/new-student', function(req, res){
 
   
 
-  var insertString = 'INSERT INTO students VALUES(777)';
-  //alert(insertString);
-  //console.log(insertString);
-  pool.query(insertString);
+  /*var insertString = 'INSERT INTO students VALUES(777)';
+  pool.query(insertString);*/
+  //res.redirect('/students.html');
+  
+   var reqBody = req.body;
+   var htmlData = 'Hello:' + reqBody;
+   res.send(htmlData);
+   console.log(htmlData);
 
-  res.redirect('/students.html');
-  alert(insertString);
+  /*alert(insertString);
   alert("test4");
   console.log(insertString);
-  console.log("test4");
+  console.log("test4");*/
 });
 
 
