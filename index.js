@@ -18,18 +18,11 @@ app.post('/loginnn', async function(req, res){
   const client = pool.connect();
   try {
     const client = await pool.connect();
-
     client.query('INSERT INTO students VALUES(69)');
-
-    const result = await client.query('SELECT * FROM students');
-    const results = { 'results': (result) ? result.rows : null};
-    res.render('pages/db', results );
-    client.release();
   } catch (err) {
     console.error(err);
     res.send("Error " + err);
   }
-  console.log(results);
 });
 
 
