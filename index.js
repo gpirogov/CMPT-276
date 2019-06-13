@@ -17,10 +17,12 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
    extended: false
 }));
-app.use(bodyParser.json());  */
+app.use(bodyParser.json());*/
 
+
+// solved error where i couldn't display or log res.body by looking at this focum post:
+// https://stackoverflow.com/questions/35931135/cannot-post-error-using-express
 app.get('/new-student', function(req, res){
-  //res.render('form');
   res.sendFile("index.html"); //if html file is within public directory
 });
 
@@ -28,24 +30,11 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.post('/new-student', function(req, res){
   /*var insertString = "INSERT INTO students VALUES(" + "12" + req.gender + ")";
-
-  pool.query(insertString);*/
-
-  
-
-  /*var insertString = 'INSERT INTO students VALUES(777)';
   pool.query(insertString);*/
   //res.redirect('/students.html');
   
-   var reqBody = req.body;
-   var htmlData = 'Hello:' + reqBody;
-   res.send(htmlData);
-   //console.log(htmlData);
-
-  /*alert(insertString);
-  alert("test4");
-  console.log(insertString);
-  console.log("test4");*/
+  res.send(req.body);
+  console.log(req.body);
 });
 
 
