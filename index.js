@@ -9,11 +9,7 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL
 });
 
-app.use(express.static(path.join(__dirname, 'public')))
-app.use(express.json());
-app.use(express.urlencoded({extended:false}));
 app.post('/loginnn', async function(req, res){
-  // request body info
   console.log(req.body);
   const client = pool.connect();
   try {
