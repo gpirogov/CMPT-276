@@ -13,9 +13,9 @@ app.post('/loginnn', function(req, res){
   /*var insertString = "INSERT INTO students VALUES(" + "12" + req.gender + ")";
 
   pool.query(insertString);*/
-  console.log("test4");
 
-  pool.query('INSERT INTO students VALUES(123123)');
+  var insertString = 'INSERT INTO students VALUES(777)';
+  pool.query(insertString);
 });
 
 
