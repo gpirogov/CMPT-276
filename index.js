@@ -26,7 +26,9 @@ app.post('/new-student', function(req, res){
   //console.log(insertString);
   pool.query(insertString);
 
-  res.redirect('/');
+  res.redirect('/students.html');
+  alert(insertString);
+  alert("test4");
 });
 
 
