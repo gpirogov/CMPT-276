@@ -39,7 +39,7 @@ app.post('/new-student', function(req, res){
   
    //var reqBody = req.body;
    //var htmlData = 'Hello:' + reqBody;
-   var html = "test5";
+   var htmlData = "test5";
    res.send(htmlData);
    console.log(htmlData);
 
