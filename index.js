@@ -19,7 +19,7 @@ app.get('/db', async (req, res) => {
   try {
     const client = await pool.connect();
     const result = await client.query('SELECT * FROM students');
-    const results = { 'results': (result) ? result.rows : null};
+    const results = { 'results': (result) ? result : null};
     res.render('pages/db', results );
     client.release();
   } catch (err) {
