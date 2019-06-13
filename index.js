@@ -23,7 +23,7 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res) => res.render('pages/index'));
 app.get('/db', async (req, res) => {
   try {
-    pool.query('SELECT * FROM students');
+    result = pool.query('SELECT * FROM students');
     const results = { 'results': (result) ? result.rows : null};
     res.render('pages/db', results );
   } catch (err) {
