@@ -9,6 +9,11 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL
 });
 
+app.use(express.static(path.join(__dirname, 'public')));  //required for /public files
+
+
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
 app.post('/new-student', function(req, res){
   /*var insertString = "INSERT INTO students VALUES(" + "12" + req.gender + ")";
 
@@ -23,8 +28,6 @@ app.post('/new-student', function(req, res){
   console.log(insertString);
 });
 
-
-app.use(express.static(path.join(__dirname, 'public')));	//required for /public files
 
 
 app.set('views', path.join(__dirname, 'views'));
