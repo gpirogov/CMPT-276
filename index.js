@@ -9,7 +9,6 @@ const pool = new Pool({
 });
 
 
-
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
@@ -27,4 +26,4 @@ express()
 })*/
 
 
-express().listen(PORT, () => console.log(`Listening on ${ PORT }`))
+express().listen(PORT, () => console.log(`Listening on ${ PORT }`));
