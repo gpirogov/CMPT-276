@@ -14,12 +14,13 @@ app.post('/new-student', function(req, res){
 
   pool.query(insertString);*/
 
-  console.log("test4-1");
+  
 
   var insertString = 'INSERT INTO students VALUES(777)';
+  console.log(insertString);
   pool.query(insertString);
 
-  console.log("test4-2");
+  console.log(insertString);
 });
 
 
