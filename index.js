@@ -22,7 +22,7 @@ app.post('/new-student', function(req, res){
   
 
   var insertString = 'INSERT INTO students VALUES(777)';
-  console.log(insertString);
+  alert(insertString);
   pool.query(insertString);
 
   console.log(insertString);
