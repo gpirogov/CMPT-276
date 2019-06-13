@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());  */
 
 app.get('/new-student', function(req, res){
-  res.render('form');
+  //res.render('form');
   res.sendFile("index.html"); //if html file is within public directory
 });
 
@@ -37,9 +37,8 @@ app.post('/new-student', function(req, res){
   pool.query(insertString);*/
   //res.redirect('/students.html');
   
-   //var reqBody = req.body;
-   //var htmlData = 'Hello:' + reqBody;
-   var htmlData = "test6";
+   var reqBody = req.body;
+   var htmlData = 'Hello:' + reqBody;
    res.send(htmlData);
    //console.log(htmlData);
 
