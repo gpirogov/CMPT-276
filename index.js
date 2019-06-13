@@ -1,19 +1,12 @@
-const express = require('express');
-const path = require('path');
-const PORT = process.env.PORT || 5000;
-
-const app = express();
+const cool = require('cool-ascii-faces')
+const express = require('express')
+const path = require('path')
+const PORT = process.env.PORT || 5000
 
 const { Pool } = require('pg');
-
-var pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl: true
-  /*user: 'postgres',
-    host: 'localhost',
-    password: 'root',
-    database: 'postgres'*/
-
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: true
 });
 
 app.set('views', path.join(__dirname, 'views'))
@@ -29,21 +22,36 @@ app.get('/users', function(req, res){
     console.log(error, result);
     pool.end();
   });
+
+  consol.log("test");
 });
 
-/*app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-app.get('/', (req, res) => res.render('pages/index'));
-app.get('/students', async function(req, res){
-  pool.query("SELECT * FROM students", function(error, result){
-    var results = { 'results': (result.rows[0].id) ? result.rows : [] };
-    res.render('pages/db', results);
-  });
-  console.log("test");
-});
-app.get('/students/:id', function(req, res){
-  console.log(req.params.id);
-});*/
+express()
+  .use(express.static(path.join(__dirname, 'public')))
+  .set('views', path.join(__dirname, 'views'))
+  .set('view engine', 'ejs')
+  .get('/', (req, res) => res.render('pages/index'))
+  .get('/cool', (req, res) => res.send(cool()))
+  .get('/times', (req, res) => res.send(showTimes()))
+  .get('/db', async (req, res) => {
+    try {
+      const client = await pool.connect()
+      const result = await client.query('SELECT * FROM test_table');
+      const results = { 'results': (result) ? result.rows : null};
+      res.render('pages/db', results );
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-
-app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
+showTimes = () => {
+  let result = ''
+  const times = process.env.TIMES || 5
+  for (i = 0; i < times; i++) {
+    result += i + ' '
+  }
+  return result;
+}
