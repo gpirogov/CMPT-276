@@ -12,12 +12,12 @@ const pool = new Pool({
 app.use(express.static(path.join(__dirname, 'public')));  //required for /public files
 
 
-app.use(express.static(__dirname + '/public')); // try removing all this
+/*app.use(express.static(__dirname + '/public')); // try removing all this
 var bodyParser = require('body-parser');    
 app.use(bodyParser.urlencoded({
    extended: false
 }));
-app.use(bodyParser.json());  
+app.use(bodyParser.json());  */
 
 app.get('/new-student', function(req, res){
   //res.render('form');
