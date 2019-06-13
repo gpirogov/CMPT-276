@@ -12,14 +12,15 @@ const pool = new Pool({
 app.use(express.static(path.join(__dirname, 'public')));  //required for /public files
 
 
-var bodyParser = require('body-parser');    // try removing this
+app.use(express.static(__dirname + '/public')); // try removing all this
+var bodyParser = require('body-parser');    
 app.use(bodyParser.urlencoded({
    extended: false
 }));
 app.use(bodyParser.json());  
 
 app.get('new-student', function(req, res){
-  res.render('form');
+  //res.render('form');
   res.sendFile("index.html"); //if html file is within public directory
 });
 
