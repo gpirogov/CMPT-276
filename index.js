@@ -24,9 +24,9 @@ app.use(express.static(path.join(__dirname, 'public')));  //required for /public
 
 // solved error where i couldn't display or log res.body by looking at this focum post:
 // https://stackoverflow.com/questions/35931135/cannot-post-error-using-express
-/*app.get('/new-student', function(req, res){
+app.get('/new-student', function(req, res){
   res.sendFile("index.html"); //if html file is within public directory
-});*/
+});
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
