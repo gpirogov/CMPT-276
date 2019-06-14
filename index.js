@@ -58,8 +58,9 @@ app.get('/db', async function(req, res){
 });
 
 
-app.get('/students/1', function(req,res) {
+app.get('/students/:id', function(req,res) {
   console.log("test8");
+  //res.sendFile(__dirname+'/public/index.html');
   //res.redirect('../students.html');
 });
 

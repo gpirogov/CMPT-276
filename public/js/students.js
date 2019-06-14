@@ -18,6 +18,8 @@ $(document).ready(function(){
 
 	$('new-student-submit-button').click(function(){
 		//var curId = $('id').val();
+		console.log("test9");
+
 		var data = {"key":"value"};
 		$.ajax({
 			//url: '/students/'+curId,
@@ -29,15 +31,18 @@ $(document).ready(function(){
 				console.log("test7");
 			}
 		});
+
+		var testVar2 = $.get('./students/1');
+		console.log(testVar2);
 	});
 
-	$('#next-student-button').click(function(){
+	$('#prev-student-button').click(function(){
 	  console.log("test1");
 
-	  var testVar = $.get('./students.html');
+	  var testVar2 = $.get('./students/1');
+	  console.log(testVar2);
+	  alert(testVar2);
 
-	  alert(testVar);
-	  console.log(testVar);
 	  console.log("test3");
 	});
 
