@@ -37,7 +37,8 @@ app.post('/new-student', function(req, res){
   req.body.weight + ", " + "-1" + ", " + req.body.height + ", " + "-1" + ", " + req.body.gpa + ")";
   pool.query(insertString);
   
-  pool.query("INSERT INTO students VALUES(-1)");
+  var testString = "INSERT INTO students VALUES(2)";
+  pool.query(testString);
   //res.redirect('/students.html');
   
   res.send(req.body);
