@@ -37,7 +37,7 @@ app.post('/new-student', function(req, res){
   req.body.hColour + ", " + req.body.fColour + ", " + req.body.weight + ", " + 
   req.body.wType + ", " + req.body.height + ", " + req.body.hType + ", " + req.body.gpa + ")";*/
 
-  var insertString = "INSERT INTO students VALUES(" + "0, '" + req.body.fName + "', '" + 
+  var insertString = "INSERT INTO students VALUES(" + "1, '" + req.body.fName + "', '" + 
   req.body.lName + "', " + req.body.gender + ", " + "-1" + ", " + "-1" + ", " + "-1" + ", " + 
   req.body.weight + ", " + "-1" + ", " + req.body.height + ", " + "-1" + ", " + req.body.gpa + ")";
   pool.query(insertString);
