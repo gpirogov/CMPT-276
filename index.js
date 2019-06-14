@@ -2,16 +2,6 @@ const express = require('express');
 const path = require('path');
 const PORT = process.env.PORT || 5000;
 
-//var studentsJS = require(__dirname + '/public/js/students.js');
-
-/*var jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-const { window } = new JSDOM();
-const { document } = (new JSDOM('')).window;
-global.document = document;
-var $ = jQuery = require('jquery')(window);*/
-
-
 const app = express();
 
 const { Pool } = require('pg');
@@ -22,29 +12,21 @@ const pool = new Pool({
 app.use(express.static(path.join(__dirname, 'public')));  //required for /public files
 
 
-// solved error where i couldn't display or log res.body by looking at this focum post:
-// https://stackoverflow.com/questions/35931135/cannot-post-error-using-express
-app.get('/new-student', function(req, res){
-  res.sendFile("index.html"); //if html file is within public directory
-});
-
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
-app.post('/new-student', function(req, res){
+app.post('/students/:id', function(req, res){
   var insertString = "INSERT INTO students VALUES(" + "0, '" + req.body.fName + "', '" + 
   req.body.lName + "', " + req.body.gender + ", " + req.body.skinTone + ", " + 
   req.body.hColour +   ", " + req.body.fColour + ", " + req.body.weight + ", " + 
   req.body.wType + ", " +   req.body.height + ", " + req.body.hType + ", " + req.body.gpa + ")";
   pool.query(insertString);
-  
-  res.sendFile(__dirname + '../students/1', req.body);
-  //res.send(req.body);
 
-  //app.post('/students/1');
+  res.send(req.body);
 
   console.log(req.body);
   console.log(insertString);
 });
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -60,20 +42,13 @@ app.get('/db', async function(req, res){
   }
 });
 
-/*app.use(express.json());
-app.use(express.urlencoded({extended:false}));
-app.post('students/:id', function(req,res) {
-  res.send(req.body);
-  console.log("test9");
-});*/
 
+// solved error where i couldn't display or log res.body by looking at this focum post:
+// https://stackoverflow.com/questions/35931135/cannot-post-error-using-express
 app.get('/students/:id', function(req,res) {
-  //res.render('form');
-  res.sendFile(__dirname + '/form.html'); //if html file is within public directory
+  res.sendFile("index.html");
   console.log("test8");
   console.log(req.body);
-  //res.sendFile(__dirname+'/public/index.html');
-  //res.redirect('../students.html');
 });
 
 /*app.get('/next-student', function(req, res){

@@ -17,10 +17,10 @@ $(document).ready(function(){
 	});
 
 	$('#delete-student-button').click(function(){
-		//var curId = $('id').val();
+		//var curId = $('#id').attr('value');
 		console.log("test9");
 
-		var data = {"key":"value"};
+		/*var data = {"key":"value"};
 		$.ajax({
 			//url: '/students/'+curId,
 			url: '/students/1',
@@ -30,20 +30,28 @@ $(document).ready(function(){
 			success: function(response){
 				console.log("test7");
 			}
-		});
+		});*/
 
-		var testVar2 = $.get('./students/1');
+		var testVar2 = $.get('./students/1', function(data){
+			$("body")
+			.append("Test: " + data.gpa);
+		}, "json" );
 		console.log(testVar2);
+		alert(testVar2);
 	});
 
 	$('#prev-student-button').click(function(){
-	  console.log("test1");
+	  var curId = $('#id').attr('value').toString();
+	  $('.form').attr("action", ("/students/" + curId));
+	  alert("test10, curId = " + curId);
 
-	  var testVar2 = $.get('./students/1');
-	  console.log(testVar2);
-	  alert(testVar2);
+	});
 
-	  console.log("test3");
+	$('#next-student-button').click(function(){
+	  $('#id').text("2");
+	  $('#id').attr("value", "2");
+	  alert("test10");
+
 	});
 
 });
