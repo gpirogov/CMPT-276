@@ -61,7 +61,7 @@ app.get('/db', async function(req, res){
 app.get('students/:id', function(req,res) {
   console.log("test8");
   res.redirect('students.html');
-}
+});
 
 app.get('/next-student', function(req, res){
   res.redirect('students.html');
