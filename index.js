@@ -64,7 +64,7 @@ app.get('/students/1', function(req,res) {
 });
 
 app.get('/next-student', function(req, res){
-  res.redirect('students.html');
+  //res.redirect('../students.html');
 
   //console.log(typeof studentsJS.foo);
 
