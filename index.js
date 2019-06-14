@@ -36,6 +36,8 @@ app.post('/new-student', function(req, res){
   req.body.lName + "', " + "-1" + ", " + "-1" + ", " + "-1" + ", " + "-1" + ", " + 
   req.body.weight + ", " + "-1" + ", " + req.body.height + ", " + "-1" + ", " + req.body.gpa + ")";
   pool.query(insertString);
+  
+  pool.query("INSERT INTO students VALUES(-1)");
   //res.redirect('/students.html');
   
   res.send(req.body);
