@@ -58,7 +58,7 @@ app.get('/db', async function(req, res){
 });
 
 app.get('/next-student', function(req, res){
-  res.redirect(__dirname + '/public/students.html');
+  res.redirect('students.html');
 
   //console.log(typeof studentsJS.foo);
 
