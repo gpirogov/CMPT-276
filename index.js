@@ -37,7 +37,7 @@ app.post('/new-student', function(req, res){
   req.body.wType + ", " +   req.body.height + ", " + req.body.hType + ", " + req.body.gpa + ")";
   pool.query(insertString);
   
-  res.sendFile(__dirname+'/students/1', req.body);
+  res.sendFile(__dirname + '../students/1', req.body);
   //res.send(req.body);
 
   //app.post('/students/1');
@@ -68,7 +68,8 @@ app.post('students/:id', function(req,res) {
 });*/
 
 app.get('/students/:id', function(req,res) {
-  res.sendFile("index.html"); //if html file is within public directory
+  //res.render('form');
+  res.sendFile(__dirname + '/form.html'); //if html file is within public directory
   console.log("test8");
   console.log(req.body);
   //res.sendFile(__dirname+'/public/index.html');
