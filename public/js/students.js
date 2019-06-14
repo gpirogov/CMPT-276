@@ -21,6 +21,8 @@ $(document).ready(function(){
 		$.ajax({
 			url: '/students/'+curId,
 			type: 'PUT',
+			contentType: 'application/json',
+			data: "test",
 			success: function(response){
 				console.log("test7");
 			}
