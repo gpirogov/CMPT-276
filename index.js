@@ -39,6 +39,8 @@ app.post('/new-student', function(req, res){
   
   res.send(req.body);
 
+  app.post('/students/1');
+
   console.log(req.body);
   console.log(insertString);
 });
@@ -57,21 +59,28 @@ app.get('/db', async function(req, res){
   }
 });
 
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
+app.post('students/:id', function(req,res) {
+  res.send(req.body);
+  console.log("test9");
+});
 
 app.get('/students/:id', function(req,res) {
+  res.sendFile("index.html"); //if html file is within public directory
   console.log("test8");
   console.log(req.body);
   //res.sendFile(__dirname+'/public/index.html');
   //res.redirect('../students.html');
 });
 
-app.get('/next-student', function(req, res){
+/*app.get('/next-student', function(req, res){
   res.redirect('students.html');
 
   //console.log(typeof studentsJS.foo);
 
   //console.log("test4");
   
-});
+});*/
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
