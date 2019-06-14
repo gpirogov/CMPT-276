@@ -33,15 +33,11 @@ app.post('/new-student', function(req, res){
   // turn the selections into ints
 
   var insertString = "INSERT INTO students VALUES(" + "0, '" + req.body.fName + "', '" + 
-  req.body.lName + "', " + "-1" + ", " + "-1" + ", " + "-1" + ", " + "-1" + ", " + 
-  req.body.weight + ", " + "-1" + ", " + req.body.height + ", " + "-1" + ", " + req.body.gpa + ")";
-  pool.query(insertString);
+  req.body.lName + "', " + req.body.gender + ", " + req.body.skinTone + ", " + 
+  req.body.hColour + ", " + req.body.fColour + ", " +   req.body.weight + ", " + 
+  req.body.wType + ", " + req.body.height + ", " + req.body.hType + ", " + req.body.gpa + ")";
   
-  //pool.query('INSERT INTO students VALUES(3)');
-
-  //var testString = 'INSERT INTO students VALUES(2)';
-  //pool.query(testString);
-  //res.redirect('/students.html');
+  pool.query(insertString);
   
   res.send(req.body);
   console.log(req.body);
