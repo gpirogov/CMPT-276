@@ -29,12 +29,18 @@ app.get('/new-student', function(req, res){
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.post('/new-student', function(req, res){
-  /*var insertString = "INSERT INTO students VALUES(" + "12" + req.gender + ")";
-  pool.query(insertString);*/
+
+  // turn the selections into ints
+
+  var insertString = "INSERT INTO students VALUES(" + "0, '" + req.body.fName + "', '" + 
+  req.body.lName + "', " + "-1" + ", " + "-1" + ", " + "-1" + ", " + "-1" + ", " + 
+  req.body.weight + ", " + "-1" + ", " + req.body.height + ", " + "-1" + ", " + req.body.gpa + ")";
+  pool.query(insertString);
   //res.redirect('/students.html');
   
   res.send(req.body);
   console.log(req.body);
+  console.log(insertString);
 });
 
 
