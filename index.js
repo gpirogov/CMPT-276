@@ -24,9 +24,9 @@ app.use(express.static(path.join(__dirname, 'public')));  //required for /public
 
 // solved error where i couldn't display or log res.body by looking at this focum post:
 // https://stackoverflow.com/questions/35931135/cannot-post-error-using-express
-app.get('/new-student', function(req, res){
+/*app.get('/new-student', function(req, res){
   res.sendFile("index.html"); //if html file is within public directory
-});
+});*/
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
@@ -37,9 +37,10 @@ app.post('/new-student', function(req, res){
   req.body.wType + ", " +   req.body.height + ", " + req.body.hType + ", " + req.body.gpa + ")";
   pool.query(insertString);
   
-  res.send(req.body);
+  res.sendFile(__dirname+'/students/1', req.body);
+  //res.send(req.body);
 
-  app.post('/students/1');
+  //app.post('/students/1');
 
   console.log(req.body);
   console.log(insertString);
@@ -59,12 +60,12 @@ app.get('/db', async function(req, res){
   }
 });
 
-app.use(express.json());
+/*app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.post('students/:id', function(req,res) {
   res.send(req.body);
   console.log("test9");
-});
+});*/
 
 app.get('/students/:id', function(req,res) {
   res.sendFile("index.html"); //if html file is within public directory
