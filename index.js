@@ -58,7 +58,7 @@ app.get('/db', async function(req, res){
 });
 
 
-app.get('students/1', function(req,res) {
+app.get('/students/1', function(req,res) {
   console.log("test8");
   res.redirect('students.html');
 });
