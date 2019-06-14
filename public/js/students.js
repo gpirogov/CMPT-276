@@ -17,9 +17,9 @@ $(document).ready(function(){
 	});
 
 	$('new-student-submit-button').click(function(){
-		var curId = 0;
+		var curId = $('id').val();
 		$.ajax({
-			url: '/students'+curId,
+			url: '/students/'+curId,
 			type: 'PUT',
 			success: function(response){
 				console.log("test7");
