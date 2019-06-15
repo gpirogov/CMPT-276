@@ -46,7 +46,7 @@ $(document).ready(function(){
 		  alert( "Load was performed." );*/
 
 
-		});
+
 	});
 
 	$('#prev-student-button').click(function(){
@@ -74,6 +74,12 @@ $(document).ready(function(){
 	});
 
 });
+
+/*module.exports.testFunc = function (msg){
+	console.log(msg);
+	alert(msg);
+};*/
+
 
 /*module.exports = function() {
 	this.foo = function(){
