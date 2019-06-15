@@ -1,10 +1,13 @@
 const express = require('express');
 const path = require('path');
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5432;
 
 const app = express();
 
 const { Pool } = require('pg');
+
+
+
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL
 });
@@ -39,7 +42,7 @@ app.get('/students/:id', async function(req,res) {
   console.log("test8");
   console.log(req.body);*/
   //res.redirect('../students.html');
-    var selectString = "SELECT * FROM students WHERE id = " + req.params.id;
+    var selectString = "SELECT * FROM students WHERE id = " + req.params.id.toString();
     /*pool.query(selectString, function(error,result){
       
         if (error) {
