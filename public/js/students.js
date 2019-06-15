@@ -53,8 +53,6 @@ $(document).ready(function(){
 	  $('#id').attr("value", counter.toString());
 	  var curId = $('#id').attr('value').toString();
 	  $('.form').attr("action", ("/students/" + curId));
-	  $('.form2').attr("action", ("/students/" + curId));	//check if this works w/o 2
-	  $('.form3').attr("action", ("/students/" + curId));
 	  //alert("counter = " + counter);
 	});
 
@@ -64,8 +62,6 @@ $(document).ready(function(){
 	  $('#id').attr("value", counter.toString());
 	  var curId = $('#id').attr('value').toString();
 	  $('.form').attr("action", ("/students/" + curId));
-	  $('.form2').attr("action", ("/students/" + curId));	//check if this works w/o 2
-	  $('.form3').attr("action", ("/students/" + curId));
 	  //alert("counter = " + counter);
 	});
 

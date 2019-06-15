@@ -28,8 +28,8 @@ function parseData(html){
 
 
 
-/*var jsdom = require('jsdom');
-$ = require('jquery')(new jsdom.JSDOM().window);*/
+var jsdom = require('jsdom');
+$ = require('jquery')(new jsdom.JSDOM().window);
 
 
 //var msg = require('./public/js/avatarChanger.js');  
@@ -37,7 +37,7 @@ var msg = require('./public/js/avatarChanger.js');
 /*var testasdas = "asdasdasgas2221312asd";
 msg.alert(testasdas);*/
 
-
+//msg.testFunc("results");
 
 
 
@@ -92,7 +92,9 @@ app.get('/students/:id', async function(req,res) {
     res.render('pages/db', results);
 
 
-    msg.testFunc(results);
+   // msg.testFunc(results);
+
+
     //console.log(results);
     res.redirect('../students.html');
     //console.log(avatarChanger);
@@ -103,6 +105,13 @@ app.get('/students/:id', async function(req,res) {
   }
 
 });
+
+
+app.delete('/students/:id', function(req,res) {
+  var deleteString = "DELETE * FROM students WHERE id = " + req.params.id.toString();
+  pool.query(selectString);
+});
+
 
 /*app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
