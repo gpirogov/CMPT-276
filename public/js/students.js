@@ -40,10 +40,12 @@ $(document).ready(function(){
 		console.log(testVar2);
 		alert(testVar2);*/
 
-		$.get( "students/1", function( data ) {
+		/*$.get( "students/1", function( data ) {
 		  $( ".result" ).html( data );
 		  alert(data);
-		  alert( "Load was performed." );
+		  alert( "Load was performed." );*/
+
+		  
 		});
 	});
 
