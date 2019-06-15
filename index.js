@@ -62,8 +62,9 @@ app.get('/students/:id', async function(req,res) {
     const result = await pool.query(selectString);
     const results = { 'results': (result) ? result.rows : null};
     console.log(results);
+    res.render('test')
     //res.render('pages/students/:id', results);
-    res.redirect('../studentsSimple.html');
+    //res.redirect('../studentsSimple.html');
   } catch (err) {
     console.error(err);
     res.send("Error " + err);
