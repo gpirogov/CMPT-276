@@ -6,14 +6,13 @@ const app = express();
 
 const { Pool } = require('pg');
 
-
-
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL
 });
 
 app.use(express.static(path.join(__dirname, 'public')));  //required for /public files
 
+app.use('/assets', express.static('assets'));
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));

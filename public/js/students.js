@@ -32,12 +32,18 @@ $(document).ready(function(){
 			}
 		});*/
 
-		var testVar2 = $.get('./students/1', function(data){
+		/*var testVar2 = $.get('./students/1', function(data){
 			$("body")
 			.append("Test: " + data.gpa);
 		}, "json" );
 		console.log(testVar2);
-		alert(testVar2);
+		alert(testVar2);*/
+
+		$.get( "students/1", function( data ) {
+		  $( ".result" ).html( data );
+		  alert(data);
+		  alert( "Load was performed." );
+		});
 	});
 
 	$('#prev-student-button').click(function(){
