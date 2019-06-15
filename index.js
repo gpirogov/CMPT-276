@@ -64,7 +64,7 @@ app.get('/students/:id', async function(req,res) {
     var resultz = { 'resultz': (result.rows[0].id) ? result.rows : [] };
     res.render('pages/db', resultz);
 
-    console.log(results);
+    console.log(resultz);
     
     //res.render('pages/students/:id', results);
     //res.redirect('../studentsSimple.html');
