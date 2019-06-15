@@ -60,11 +60,11 @@ app.get('/students/:id', async function(req,res) {
     //console.log("res = " + res);
 
     const result = await pool.query(selectString);
-    //const results = { 'results': (result) ? result.rows : null};
-    var resultz = { 'resultz': (result.rows[0].id) ? result.rows : [] };
-    res.render('pages/db', resultz);
+    var results = { 'results': (result) ? result.rows : null};
+    //var results = { 'results': (result.rows[0].id) ? result.rows : [] };
+    res.render('pages/db', results);
 
-    console.log(resultz);
+    console.log(results);
     
     //res.render('pages/students/:id', results);
     //res.redirect('../studentsSimple.html');
