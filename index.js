@@ -33,9 +33,9 @@ app.get('/students/:id', function(req,res) {
   /*res.sendFile("index.html");
   console.log("test8");
   console.log(req.body);*/
-  res.redirect('students.html');
-  var insertString = "SELECT * FROM students WHERE ID = " + req.params.id;
-  pool.query(insertString);
+  res.redirect('../students.html');
+  var selectString = "SELECT * FROM students WHERE ID = " + req.params.id;
+  pool.query(selectString);
   console.log("req.id = " + req.params.id);
   
 });
