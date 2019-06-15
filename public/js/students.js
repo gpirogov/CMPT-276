@@ -18,34 +18,12 @@ $(document).ready(function(){
 	});
 
 	$('#delete-student-button').click(function(){
-		//var curId = $('#id').attr('value');
-		console.log("test9");
+		var curId = $('#id').attr('value').toString();
 
-		/*var data = {"key":"value"};
-		$.ajax({
-			//url: '/students/'+curId,
-			url: '/students/1',
-			type: 'PUT',
-			contentType: 'application/json',
-			data: JSON.stringify(data),
-			success: function(response){
-				console.log("test7");
-			}
-		});*/
-
-		/*var testVar2 = $.get('./students/1', function(data){
-			$("body")
-			.append("Test: " + data.gpa);
-		}, "json" );
-		console.log(testVar2);
-		alert(testVar2);*/
-
-		/*$.get( "students/1", function( data ) {
-		  $( ".result" ).html( data );
-		  alert(data);
-		  alert( "Load was performed." );*/
-
-
+		$.ajax({						//this doesnt work either...
+		  url:'/students/'+curId,
+		  type: 'delete'
+		});
 
 	});
 
@@ -90,10 +68,3 @@ $(document).ready(function(){
 		
 	};
 };*/
-
-
-
-/*function nextStudent(){
-	console.log("test6");
-	$('#input-div').hide();
-}*/
