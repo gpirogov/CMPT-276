@@ -21,14 +21,26 @@ app.post('/students/:id', function(req, res){
   req.body.wType + ", " +   req.body.height + ", " + req.body.hType + ", " + req.body.gpa + ")";
   pool.query(insertString);
 
-  res.send(req.body);
+  //res.send(req.body);
 
-  console.log(req.body);
-  console.log(insertString);
+  //console.log(req.body);
+  //console.log(insertString);
 });
 
+// solved error where i couldn't display or log res.body by looking at this focum post:
+// https://stackoverflow.com/questions/35931135/cannot-post-error-using-express
+app.get('/students/:id', function(req,res) {
+  /*res.sendFile("index.html");
+  console.log("test8");
+  console.log(req.body);*/
+  res.redirect('students.html');
+  var insertString = "SELECT * FROM students WHERE ID = " + req.params.id;
+  pool.query(insertString);
+  console.log("req.id = " + req.params.id);
+  
+});
 
-app.set('views', path.join(__dirname, 'views'));
+/*app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => res.render('pages/index'));
 app.get('/db', async function(req, res){
@@ -40,16 +52,10 @@ app.get('/db', async function(req, res){
     console.error(err);
     res.send("Error " + err);
   }
-});
+});*/
 
 
-// solved error where i couldn't display or log res.body by looking at this focum post:
-// https://stackoverflow.com/questions/35931135/cannot-post-error-using-express
-app.get('/students/:id', function(req,res) {
-  res.sendFile("index.html");
-  console.log("test8");
-  console.log(req.body);
-});
+
 
 /*app.get('/next-student', function(req, res){
   res.redirect('students.html');

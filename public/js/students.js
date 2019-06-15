@@ -2,7 +2,7 @@
 
 //INSERT INTO students VALUES(0, 'Clarke', 'Melissa', 'Female', 'Caucasian', 'Blonde', 'Brown', 165.0, 'lbs', 5, 10, 3.4);
 
-
+var counter = 0;
 
 $(document).ready(function(){
 
@@ -41,17 +41,25 @@ $(document).ready(function(){
 	});
 
 	$('#prev-student-button').click(function(){
+	  counter--;
+	  $('#id').text(counter.toString());
+	  $('#id').attr("value", counter.toString());
 	  var curId = $('#id').attr('value').toString();
 	  $('.form').attr("action", ("/students/" + curId));
-	  alert("test10, curId = " + curId);
-
+	  $('.form2').attr("action", ("/students/" + curId));	//check if this works w/o 2
+	  $('.form3').attr("action", ("/students/" + curId));
+	  //alert("counter = " + counter);
 	});
 
 	$('#next-student-button').click(function(){
-	  $('#id').text("2");
-	  $('#id').attr("value", "2");
-	  alert("test10");
-
+	  counter++;
+	  $('#id').text(counter.toString());
+	  $('#id').attr("value", counter.toString());
+	  var curId = $('#id').attr('value').toString();
+	  $('.form').attr("action", ("/students/" + curId));
+	  $('.form2').attr("action", ("/students/" + curId));	//check if this works w/o 2
+	  $('.form3').attr("action", ("/students/" + curId));
+	  //alert("counter = " + counter);
 	});
 
 });
