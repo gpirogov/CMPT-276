@@ -1,8 +1,3 @@
-// don't add db stuff here.
-
-//INSERT INTO students VALUES(0, 'Clarke', 'Melissa', 'Female', 'Caucasian', 'Blonde', 'Brown', 165.0, 'lbs', 5, 10, 3.4);
-
-
 var counter = 0;
 
 $(document).ready(function(){
@@ -13,8 +8,6 @@ $(document).ready(function(){
 	  $('#info-div').hide();
 	  $('#new-student-div').show();
 	  $('#new-student-div').focus();
-
-	  
 	});
 
 	$('#delete-student-button').click(function(){
@@ -56,15 +49,4 @@ $(document).ready(function(){
 /*module.exports.testFunc = function (msg){
 	console.log(msg);
 	alert(msg);
-};*/
-
-
-/*module.exports = function() {
-	this.foo = function(){
-
-	};
-	
-	this.bar = function(){
-		
-	};
 };*/
