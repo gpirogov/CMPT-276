@@ -45,7 +45,7 @@ $(document).ready(function(){
 		  alert(data);
 		  alert( "Load was performed." );*/
 
-		  
+
 		});
 	});
 
@@ -54,7 +54,10 @@ $(document).ready(function(){
 	  $('#id').text(counter.toString());
 	  $('#id').attr("value", counter.toString());
 	  var curId = $('#id').attr('value').toString();
-	  $('.form').attr("action", ("/students/" + curId));
+	  $('.form').attr("action", ("/students/" + curId));	//would have changed this to
+	  $('.form2').attr("action", ("/students/" + curId));	//only 1 class if i had time.
+	  $('.form3').attr("action", ("/students/" + curId));
+	  $('.form4').attr("action", ("/students/" + curId));
 	  //alert("counter = " + counter);
 	});
 
@@ -63,7 +66,10 @@ $(document).ready(function(){
 	  $('#id').text(counter.toString());
 	  $('#id').attr("value", counter.toString());
 	  var curId = $('#id').attr('value').toString();
-	  $('.form').attr("action", ("/students/" + curId));
+	  $('.form').attr("action", ("/students/" + curId));	//would have changed this to
+	  $('.form2').attr("action", ("/students/" + curId));	//only 1 class if i had time.
+	  $('.form3').attr("action", ("/students/" + curId));
+	  $('.form4').attr("action", ("/students/" + curId));
 	  //alert("counter = " + counter);
 	});
 
