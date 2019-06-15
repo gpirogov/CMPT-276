@@ -96,7 +96,7 @@ app.get('/students/:id', async function(req,res) {
 
 
     //console.log(results);
-    res.redirect('../students.html');
+    //res.redirect('../students.html');
     //console.log(avatarChanger);
 
   } catch (err) {
