@@ -12,7 +12,36 @@ const pool = new Pool({
 
 app.use(express.static(path.join(__dirname, 'public')));  //required for /public files
 
-app.use('/assets', express.static('assets'));
+
+
+/*const curl = require("curl");
+const jsdom = require("jsdom");
+ 
+function parseData(html){
+    const {JSDOM} = jsdom;
+    const dom = new JSDOM(html);
+    const $ = (require('jquery'))(dom.window);
+    //let's start extracting the data
+  //... start using jquery as $ like you would in a browser
+}*/
+
+
+
+
+/*var jsdom = require('jsdom');
+$ = require('jquery')(new jsdom.JSDOM().window);*/
+
+
+//var msg = require('./public/js/avatarChanger.js');  
+var msg = require('./public/js/avatarChanger.js');
+/*var testasdas = "asdasdasgas2221312asd";
+msg.alert(testasdas);*/
+
+
+
+
+
+
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
@@ -60,13 +89,14 @@ app.get('/students/:id', async function(req,res) {
 
     const result = await pool.query(selectString);
     var results = { 'results': (result) ? result.rows : null};
-    //var results = { 'results': (result.rows[0].id) ? result.rows : [] };
     res.render('pages/db', results);
 
-    console.log(results);
-    
-    //res.render('pages/students/:id', results);
-    //res.redirect('../studentsSimple.html');
+
+    msg.testFunc(results);
+    //console.log(results);
+    res.redirect('../students.html');
+    //console.log(avatarChanger);
+
   } catch (err) {
     console.error(err);
     res.send("Error " + err);
