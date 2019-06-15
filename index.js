@@ -37,6 +37,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => res.render('pages/index'));
 app.get('/students/:id', async function(req,res) {
+
   try {
   /*res.sendFile("index.html");
   console.log("test8");
@@ -58,9 +59,10 @@ app.get('/students/:id', async function(req,res) {
     console.log("req.id = " + req.params.id);*/
     //console.log("res = " + res);
 
-    const result = await pool.query(selectString);
-    const results = { 'results': (result) ? result.rows : null};
-    res.render('pages/students/:id', results);
+    //const result = await pool.query(selectString);
+    //const results = { 'results': (result) ? result.rows : null};
+    //res.render('pages/students/:id', results);
+    res.redirect('../studentsSimple.html');
   } catch (err) {
     console.error(err);
     res.send("Error " + err);
