@@ -18,7 +18,6 @@ $(document).ready(function(){
 	});
 
 	$('#delete-student-button').click(function(){
-		//var curId = $('#id').attr('value');
 		console.log("test9");
 
 
