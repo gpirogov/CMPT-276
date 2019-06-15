@@ -21,6 +21,14 @@ $(document).ready(function(){
 		//var curId = $('#id').attr('value');
 		console.log("test9");
 
+
+		var curId = $('#id').attr('value');
+		$.ajax({
+		  url:'/students/'+curId,
+		  type: 'delete'
+		});
+
+
 		/*var data = {"key":"value"};
 		$.ajax({
 			//url: '/students/'+curId,
