@@ -13,7 +13,7 @@ $(document).ready(function(){
 	$('#delete-student-button').click(function(){
 		var curId = $('#id').attr('value').toString();
 
-		$.ajax({						//this doesnt work either...
+		$.ajax({						//I don't know why this doens't work.
 		  url:'/students/'+curId,
 		  type: 'delete'
 		});
