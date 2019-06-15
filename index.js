@@ -36,9 +36,16 @@ app.get('/students/:id', function(req,res) {
   console.log(req.body);*/
   res.redirect('../students.html');
   var selectString = "SELECT * FROM students WHERE ID = " + req.params.id;
-  pool.query(selectString);
+  pool.query(selectString, function(req,res){
+    
+      var results = { 'results': (res.rows[0].id) ? res.rows : [] };
+      res.render('pages/db', results);
+
+      console.log("results = " + results);
+  });
   console.log("req.id = " + req.params.id);
-  
+  console.log("res = " + res);
+
 });
 
 /*app.set('views', path.join(__dirname, 'views'));
