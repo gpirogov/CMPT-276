@@ -109,7 +109,7 @@ app.get('/students/:id', async function(req,res) {
 
 app.delete('/students/:id', function(req,res) {
   var deleteString = "DELETE FROM students WHERE id = " + req.params.id.toString();
-  pool.query(selectString);
+  pool.query(deleteString);
 });
 
 
