@@ -89,7 +89,7 @@ app.get('/students/:id', async function(req,res) {
 
     const result = await pool.query(selectString);
     var results = { 'results': (result) ? result.rows : null};
-    res.render('pages/db', results);
+    res.render('pages/students', results);
 
 
    // msg.testFunc(results);
