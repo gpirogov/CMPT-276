@@ -13,7 +13,7 @@ $(document).ready(function(){
 	$('#delete-student-button').click(function(){
 		var curId = $('#id').attr('value').toString();
 
-		$.ajax({						//I don't know why this doens't work.
+		$.ajax({						//I don't know why this doesn't work.
 		  url:'/students/'+curId,
 		  type: 'delete'
 		});
@@ -27,7 +27,7 @@ $(document).ready(function(){
 	  var curId = $('#id').attr('value').toString();
 	  $('.form').attr("action", ("/students/" + curId));	//would have changed this to
 	  $('.form2').attr("action", ("/students/" + curId));	//only 1 class if i had time.
-	  $('.form3').attr("action", ("/students/{{" + curId + "}}?_method=DELETE"));
+	  $('.form3').attr("action", ("/students/" + curId));
 	  $('.form4').attr("action", ("/students/" + curId));
 	  //alert("counter = " + counter);
 	});
@@ -39,7 +39,7 @@ $(document).ready(function(){
 	  var curId = $('#id').attr('value').toString();
 	  $('.form').attr("action", ("/students/" + curId));	//would have changed this to
 	  $('.form2').attr("action", ("/students/" + curId));	//only 1 class if i had time.
-	  $('.form3').attr("action", ("/students/{{" + curId + "}}?_method=DELETE"));
+	  $('.form3').attr("action", ("/students/" + curId));
 	  $('.form4').attr("action", ("/students/" + curId));
 	  //alert("counter = " + counter);
 	});
