@@ -21,6 +21,7 @@ app.post('/students/:id', function(req, res){
   req.body.wType + ", " +   req.body.height + ", " + req.body.hType + ", " + req.body.gpa + ")";
   pool.query(insertString);
 
+  res.redirect('../students.html');
   //res.send(req.body);
 
   //console.log(req.body);
