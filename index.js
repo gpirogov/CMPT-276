@@ -35,16 +35,21 @@ app.get('/students/:id', function(req,res) {
   console.log("test8");
   console.log(req.body);*/
   res.redirect('../students.html');
-  var selectString = "SELECT * FROM students WHERE ID = " + req.params.id;
-  pool.query(selectString, function(req,res){
+  var selectString = "SELECT * FROM students WHERE id = " + req.params.id;
+  pool.query(selectString, function(error,result){
     
-      var results = { 'results': (res.rows[0].id) ? res.rows : [] };
-      res.render('pages/db', results);
-
-      console.log("results = " + results);
+      if (error) {
+        console.log(error);
+      }else{
+        //var results = { 'results': (result.rows[0].id) ? result.rows : [] };
+        //res.render('pages/db', results);
+        console.log(result.rows[0]);
+        res.redirect('../studentsSimple.html');
+        //console.log("results = " + results);
+      }
   });
   console.log("req.id = " + req.params.id);
-  console.log("res = " + res);
+  //console.log("res = " + res);
 
 });
 
