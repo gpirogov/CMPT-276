@@ -61,8 +61,8 @@ app.get('/students/:id', async function(req,res) {
 
     const result = await pool.query(selectString);
     //const results = { 'results': (result) ? result.rows : null};
-    var results = { 'results': (result.rows[0].id) ? result.rows : [] };
-    res.render('pages/db', results);
+    var resultz = { 'resultz': (result.rows[0].id) ? result.rows : [] };
+    res.render('pages/db', resultz);
 
     console.log(results);
     
